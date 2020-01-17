@@ -15,12 +15,18 @@
     --transparente:rgba(255,255,255,0);
     
 }
+.noite{
+    display: none;
+}
+
 
 body{
     background-color: #23242d;
     text-align: center;
     font-family: 'Dosis', sans-serif;
     color: var(--cor-texto);
+    display: flex;
+    align-content: center;
 
 }
 
@@ -178,11 +184,14 @@ animation: nuvem 22s linear normal;
     position: absolute;
     width: 100%;
     bottom: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,0);
 }
 
-.conteudo .dia{
+.conteudo .data{
     font-size: 31px;
     font-weight: 800;
+    position: relative;
 }
 
 .conteudo .local{
