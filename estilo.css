@@ -1,0 +1,113 @@
+:root{
+    --cor-texto:  rgba(255, 255, 255, .6);
+    --cor-ceu:rgba(255, 255, 255, .23);
+    --cor-fundo:#2f3038;
+    --cor-interface:rgba(255, 255, 255, .74);
+    --cor-lua:#dbdabc;
+    --cor-cratera: #d4d3d7;
+    --sombra: rgba(0,0,0,0.1);
+
+}
+
+body{
+    background-color: #23242d;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    color: var(--cor-texto);
+
+}
+
+body::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--cor-ceu);
+    z-index: 1;
+    top: 0;
+    left: 0em;
+    opacity: 0;
+}
+
+.interface{
+    width: 400px;
+    height: 650px;
+    background-color: var(--cor-fundo);
+    overflow: hidden; /* cria uma mascara pra esse componente */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -325px;
+    border-radius: 20px;
+}
+
+.interface::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--cor-interface);
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Criar a lua agr */
+
+.lua{
+    width: 600px;
+    height: 600px;
+    background-color: var(--cor-lua);
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--cor-lua);/*criando o brilho da lua*/
+    left: 0;
+    top: 0;
+    position: absolute;
+    animation: lua 5s linear infinite;
+}
+
+.lua::before,.lua::after{/*criando as crateras*/
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--cor-cratera);
+    box-shadow: -1px -3px 0 var(--sombra);
+}
+
+.lua::after{
+    width: 140px;
+    height: 100px;
+    bottom: 30px;
+    left: 40%;
+}
+
+.lua::before{
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    left: 30%;
+}
+
+/* animando a lua */
+
+@keyframes lua{
+    from{
+        left: 100%;
+        top: -200px;
+    }
+    to{
+        left: -100%;
+        top: -400px;
+    }
+}
+
+
+/* ================================================ */
+
+/* criando as nuvens */
+.nuvem, .nuvem::before, .nuvem::after, .nuvem span{
+content: '';
+background-color: inherit;
+
+}
